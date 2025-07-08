@@ -10,7 +10,9 @@
        
     </style>
 </head>
-<a href="{% provider_login_url 'google' %}">login</a>
+<a href="{% provider_login_url 'google' process='login' next='/app1/user/' %}">
+    Login with Google
+</a>
 <body>
 </body>
 </html>
