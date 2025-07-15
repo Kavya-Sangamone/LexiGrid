@@ -1,18 +1,22 @@
 
+
 {% load socialaccount %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Crossword Puzzle</title>
-    <style>
-       
-    </style>
 </head>
-<a href="{% provider_login_url 'google' process='login' next='/app1/user/' %}">
+
+<form action="{% url 'admin_login' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Login as admin</button>
+</form>
+<form action="{% url 'superadmin_login' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Login as Superadmin</button>
+</form> 
+
+    <a href="{% provider_login_url 'google' process='login' next='/app1/userlanding/' %}">
     Login with Google
 </a>
-<body>
 </body>
 </html>

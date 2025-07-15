@@ -1,0 +1,24 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Admin</title>
+</head>
+<body>
+    <h1> Admin Login</h1>
+    {% if error %}
+        <script>alert("{{ error }}");</script>
+    {% endif %}
+    <form action="{% url 'admindashboard' %}" method="post">
+    {% if message %}
+        <script>alert("{{ message }}");</script>
+    {% endif %}
+    {% csrf_token %}
+    <label>Admin id</label>
+    <input type="text" name="admin_id" placeholder="Enter Admin ID"><br>
+    <label>Password</label>
+    <input type="password" name="password" placeholder="Enter Password"><br>
+    <button type="submit">Login</button>
+    </form>
+   </body>
+   </html>

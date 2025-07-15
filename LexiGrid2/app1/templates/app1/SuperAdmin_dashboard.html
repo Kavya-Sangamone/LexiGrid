@@ -1,0 +1,26 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Creator</title>
+</head>
+<body>
+    <h1>Add Creator</h1>
+
+    <form action="{% url 'add_creator' %}" method="post">
+        {% csrf_token %}
+        <label>Creator Name</label>
+        <input type="text" name="creator_name" placeholder="Enter name"><br>
+        <label>Password</label>
+        <input type="password" name="creator_password" placeholder="Enter password"><br>
+        <button type="submit">Add Creator</button>
+    </form>
+    {% if messages %}
+  <ul style="color: green;">
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+</body>
+</html>

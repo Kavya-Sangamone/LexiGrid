@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Landing</title>
+</head>
+<body>
+    <h1>Welcome to the User Landing Page</h1>
+    {% if active_crosswords %}
+        <h2>Active Crosswords</h2>
+        <ul>
+            {% for crossword in active_crosswords %}
+                <li>{{ crossword }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No active crosswords available.</p>
+    {% endif %}
+    {% for crossword in active_crosswords %}
+    <li>
+        <a href="{% url 'creator' admin_id=crossword.creator %}">
+            {{ crossword.filename }} by {{ crossword.creator }}
+        </a>
+    </li>
+{% endfor %}
+
+    <!-- Add your content here -->
+</body>
+</html>

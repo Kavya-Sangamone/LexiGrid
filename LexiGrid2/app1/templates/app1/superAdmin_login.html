@@ -1,0 +1,19 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Admin</title>
+</head>
+<body>
+    <h1>Super Admin Login</h1>
+
+        <form action="{% url 'superadmin_login' %}" method="post">
+            {% csrf_token %}
+            <label>Super Admin ID</label>
+            <input type="text" name="superadmin_id" placeholder="enter your id"><br>
+            <label>Password</label>
+            <input type="password" name="superadmin_password" placeholder="enter password"><br>
+            <button type="submit">Login</button>
+        </form>
+   </body>
+   </html>
